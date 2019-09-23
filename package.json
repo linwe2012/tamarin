@@ -4,6 +4,7 @@
     "engines": {
         "vscode": ">=0.9.0-pre.1"
     },
+    "icon": "https://github.com/linwe2012/icon.png",
     "repository": "https://github.com/linwe2012/tamarin",
     "publisher": "leon",
     "contributes": {
