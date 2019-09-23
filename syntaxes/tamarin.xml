@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   
+   <key>fileTypes</key>
+	<array>
+		<string>.spthy</string>
+	</array>
+   <key>name</key>
+	<string>tamarin</string>
+   <key>patterns</key>
+   <array>
+      <!--Comments-->
+
+      <dict>
+         <key>begin</key>
+         <string>(?<!\\);</string>
+         <key>end</key>
+         <string>\n</string>
+         <key>name</key>
+         <string>comment.line</string>
+      </dict>
+
+      <dict>
+         <key>begin</key>
+         <string>(?<!\\)//</string>
+         <key>end</key>
+         <string>\n</string>
+         <key>name</key>
+         <string>comment.block</string>
+      </dict>
+
+      <!--Quoted strings-->
+      <dict>
+         <key>include</key>
+         <string>#QuotedString</string>
+      </dict>
+
+      <dict>
+         <key>match</key>
+         <string>rule\s+([\w_]+)\s*:</string>
+         <key>name</key>
+         <string>entity.name.tag</string>
+      </dict>
+
+      <dict>
+         <key>match</key>
+         <string>{\||\|}|{|}|\.\.|:|@|#|&lt;-|&lt;-&gt;|\!=|&lt;=|&gt;=|--\[|\]-&gt;|\[|\]|--&gt;</string>
+         <key>name</key>
+         <string>keyword.operator</string>
+      </dict>
+
+      <dict>
+         <key>match</key>
+         <string>\b(F|T|All|Ex|not|)\\b|&amp;|\\||==&gt;|=|==|&lt;|&gt;)</string>
+         <key>name</key>
+         <string>constant.language</string>
+      </dict>
+      
+   </array>
+   <key>scopeName</key>
+	<string>source.tamarin</string>
+	<key>uuid</key>
+	<string>BF0E7726-65E6-11E7-907B-A6006AD3DBA0</string>
+</dict>
+</plist>
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   
+   <key>fileTypes</key>
+	<array>
+		<string>.spthy</string>
+	</array>
+   <key>name</key>
+	<string>tamarin</string>
+   <key>patterns</key>
+   <array>
+      <!--Comments-->
+      <dict>
+         <key>begin</key>
+         <string>(?<!\\)//</string>
+         <key>end</key>
+         <string>\n</string>
+         <key>name</key>
+         <string>comment.line</string>
+      </dict>
+
+      <dict>
+         <key>begin</key>
+         <string>(?<!\\)/\*</string>
+         <key>end</key>
+         <string>\*/</string>
+         <key>name</key>
+         <string>comment.block</string>
+      </dict>
+
+      <!-- key words -->
+      <dict>
+         <key>match</key>
+         <string>\b(axiom|lemma|equations|functions|builtins|protocol|property|theory|begin|end|subsection|section|text|rule|pb|lts|exists-trace|all-traces|enable|assertions|modulo|default_rules|anb-proto|in|let|Fresh|fresh|Public|public)\b</string>
+         <key>name</key>
+         <string>keyword.control</string>
+      </dict>
+
+      
+
+      <dict>
+         <key>match</key>
+         <string>\b(xor|aenc|adec|senc|sdec|sign|verify|Eq|eq|hashing|signing|revealing-signing|diffie-hellman|symmetric-encryption|asymmetric-encryption|multiset|bilinear-pairing|h|H|sk|pk|Fr|In|Out|IN|OUT)\b</string>
+         <key>name</key>
+         <string>variable.language</string>
+      </dict>
+
+      <dict>
+         <key>match</key>
+         <string>\b(-)?[0-9.]+\b</string>
+         <key>name</key>
+         <string>constant.numeric</string>
+      </dict>
+
+      <!-- dict>
+         <key>match</key>
+         <string>([\w]+)(?:\([^\)]+\))</string>
+         <key>name</key>
+         <string>entity.name.function</string>
+      </dict -->
+
+      <dict>
+         <key>match</key>
+         <string>rule\s+([\w]+)[\s]*:</string>
+         <key>name</key>
+         <string>entity.name.tag</string>
+      </dict>
+      
+      <dict>
+         <key>match</key>
+         <string>\b(in|let|begin|end)\b</string>
+         <key>name</key>
+         <string>constant.language</string>
+      </dict>
+
+
+      <dict>
+         <key>begin</key>
+         <string>(?<!\\)'</string>
+         <key>end</key>
+         <string>(?<!\\)'</string>
+         <key>name</key>
+         <string>string.quoted.single</string>
+      </dict>
+      
+      
+      
+      <dict>
+         <key>match</key>
+         <string>\b(F|T|All|Ex|not)\b|&amp;|\||==&gt;|=|==</string>
+         <key>name</key>
+         <string>constant.language</string>
+      </dict>
+      
+
+      
+   </array>
+   <key>scopeName</key>
+	<string>source.tamarin</string>
+	<key>uuid</key>
+	<string>BF0E7726-65E6-11E7-907B-A6006AD3DBA0</string>
+</dict>
+</plist>
