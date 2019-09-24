@@ -1,0 +1,93 @@
+{
+    "rule": {
+        "prefix": "rule",
+        "body": [
+            "rule $1:",
+            "\t[ $2 ]\n\t--[\n\t\t\n\t]->\n\t[ $3 ]"
+        ],
+        "description": "Generate rule"
+    },
+    "rule let in": {
+        "prefix": "rule",
+        "body": [
+            "rule $1:",
+            "\tlet",
+            "\t\t$2",
+            "\tin",
+            "\t[ $3 ]",
+            "\t--[",
+            "\t\t",
+            "\t]->",
+            "\t[ $4 ]"
+        ],
+        "description": "Generate full rule wit let in"
+    },
+    "thoery": {
+        "prefix": "theory",
+        "body": [
+            "theory $1",
+            "begin",
+            "",
+            "$2",
+            "",
+            "end"
+        ],
+        "description": "Skeleton of a theory"
+    },
+    "lemma": {
+        "prefix": "lemma",
+        "body": [
+            "lemma $1:",
+            "\t\"",
+            "\t$2",
+            "\t\""
+        ],
+        "description": "Skeleton of a lemma"
+    },
+    "block-comment":{
+        "prefix": "cmt",
+        "body": [
+            "/************************************/",
+            "/* $1 */",
+            "/************************************/"
+        ],
+        "description": "Skeleton of a lemma"
+    },
+    "fresh": {
+        "prefix": "f",
+        "body":[
+            "Fr(~$1)"
+        ],
+        "description": "Create a fresh nounce"
+    },
+    "pair": {
+        "prefix": "<",
+        "body":[
+            "< $1, $2 >"
+        ],
+        "description": "Syntax sugar for pair(a, b)"
+    },
+    "in": {
+        "prefix": "i",
+        "body":[
+            "In($1)"
+        ],
+        "description": "Accept a message from outer world, possibly forged by attacker"
+    },
+    "out": {
+        "prefix": "o",
+        "body":[
+            "Out($1)"
+        ],
+        "description": "Send message out, can be sniffed by attacker"
+    },
+    "init": {
+        "prefix": "init",
+        "body": [
+            "rule init_$1:",
+            "\t[ $2 ]\n\t--[\n\t\t\n\t]->\n\t[ $3 ]"
+        ],
+        "description": "Create an init rule"
+    }
+
+}
