@@ -1,0 +1,87 @@
+name: Tamarin
+file_extensions:
+  - spthy
+scope: source.spthy
+fileTypes: [YAML-tmLanguage]
+scopeName: source.yaml-tmlanguage
+uuid: a6b019cb-75bf-4d9a-aab1-703f6b6d143b
+
+foldingStartMarker: "(?x)\n\t\t /\\*\\*(?!\\*)\n\t\t|^(?![^{]*?//|[^{]*?/\\*(?!.*?\\*/.*?\\{)).*?\\{\\s*($|//|/\\*(?!.*?\\*/.*\\S))\n\t"
+foldingStopMarker: "(?<!\\*)\\*\\*/|^\\s*\\}"
+
+contexts:
+  main:
+    - include: comments
+    - include: comments-inline
+
+    - match: '"'
+      scope: punctuation.definition.string.begin.spthy
+
+    - match: \b(equations|functions|builtins|protocol|property|theory|begin|end|subsection|section|text|rule|pb|lts|exists-trace|all-traces|enable|assertions|modulo|default_rules|anb-proto|in|let|Fresh|fresh|Public|public)\b
+      scope: keyword.function.spthy
+
+    - match: '{\||\|}|{|}|\.\.|:|@|#|<-|<->|\!=|<=|>=|--\[|\]->|\[|\]|-->'
+      scope: keyword.operator.spthy
+
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.spthy
+
+    # Brackets
+    - match: \(
+      push: brackets
+    - match: \)
+      scope: invalid.illegal.stray-bracket-end
+
+    - match: "\\b(aenc|adec|senc|sdec|sign|verify|Eq|eq|hashing|signing|revealing-signing|diffie-hellman|symmetric-encryption|asymmetric-encryption|multiset|bilinear-pairing|h|H|sk|pk|Fr|In|Out|IN|OUT)\\b"
+      scope: variable.language.spthy
+      comment: Tamarin constr keywords
+
+    - match: "\\b(in|let|begin|end)\\b"
+      scope: constant.language.spthy
+      comment: Tamarin decl keywords
+
+    - match: "\\b(axiom|restriction|lemma|sources|use_induction|reuse|hide_lemma|left|right|builtins|protocol|property|subsection|section|text|theory)\\b"
+      scope: keyword.control.spthy
+
+
+    - match: "(\\b(F|T|All|Ex|not|)\\b|&|\\||==>|=|==|<|>)"
+      scope: constant.language.spthy
+      comment: Tamarin logical operations
+
+    - match: "'"
+      captures:
+        0: punctuation.definition.string.begin.spthy
+      push:
+        - meta_scope: string.quoted.single.spthy
+        - match: "'"
+          captures:
+            0: punctuation.definition.string.end.spthy
+          pop: true
+
+    - match: \w+\s*(?=\()
+      scope: support.function.spthy
+
+
+  comments:
+    - match: /\*\*/
+      scope: comment.block.empty.spthy punctuation.definition.comment.spthy
+    - include: comments-inline
+  comments-inline:
+    - match: /\*
+      scope: punctuation.definition.comment.spthy
+      push:
+        - meta_scope: comment.block.spthy
+        - match: \*/
+          scope: punctuation.definition.comment.spthy
+          pop: true
+    - match: \s*((//).*$\n?)
+      captures:
+        1: comment.line.double-slash.spthy
+        2: punctuation.definition.comment.spthy
+
+  brackets:
+    - match: \)
+      pop: true
+    - include: main

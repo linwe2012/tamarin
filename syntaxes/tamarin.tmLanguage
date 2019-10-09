@@ -33,11 +33,17 @@
       <!-- key words -->
       <dict>
          <key>match</key>
-         <string>\b(axiom|lemma|equations|functions|builtins|protocol|property|theory|begin|end|subsection|section|text|rule|pb|lts|exists-trace|all-traces|enable|assertions|modulo|default_rules|anb-proto|in|let|Fresh|fresh|Public|public)\b</string>
+         <string>\b(equations|functions|builtins|protocol|property|theory|begin|end|subsection|section|text|rule|pb|lts|exists-trace|all-traces|enable|assertions|modulo|default_rules|anb-proto|in|let|Fresh|fresh|Public|public)\b</string>
          <key>name</key>
          <string>keyword.control</string>
       </dict>
 
+      <dict>
+         <key>match</key>
+         <string>\b(axiom|restriction|lemma|sources|use_induction|reuse|hide_lemma|left|right|builtins|protocol|property|subsection|section|text)\b</string>
+         <key>name</key>
+         <string>keyword.control</string>
+      </dict>
       
 
       <dict>

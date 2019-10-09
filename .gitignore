@@ -1,2 +1,4 @@
 *.visx
 *.vsix
+*.aes
+*.spthy

@@ -22,7 +22,7 @@
         ],
         "description": "Generate full rule wit let in"
     },
-    "thoery": {
+    "theory": {
         "prefix": "theory",
         "body": [
             "theory $1",
@@ -61,7 +61,7 @@
         "description": "Create a fresh nounce"
     },
     "pair": {
-        "prefix": "<",
+        "prefix": "pair",
         "body":[
             "< $1, $2 >"
         ],
@@ -88,6 +88,38 @@
             "\t[ $2 ]\n\t--[\n\t\t\n\t]->\n\t[ $3 ]"
         ],
         "description": "Create an init rule"
+    },
+    "let in": {
+        "prefix": "let",
+        "body":[
+            "\tlet",
+            "\t\t$1",
+            "in"
+        ]
+    },
+    "all-traces": {
+        "prefix": "all",
+        "body": [
+            "all-traces"
+        ],
+        "description": "Tamarin - All Traces"
+    },
+    "exists-trace": {
+        "prefix": "exist",
+        "body":[
+            "exists-trace"
+        ],
+        "description": "Lemma proven once a trace is found"
+    },
+    "restrition": {
+        "prefix": "restriction",
+        "body":[
+            "restriction $1:",
+            "\"",
+            "\t$2",
+            "\""
+        ],
+        "description": "restriction skeleton"
     }
 
 }
