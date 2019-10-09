@@ -1,4 +1,4 @@
-# Tamarin Prover Syntax
+# Tamarin Prover Syntax for VSCode
 
 An extension for highlighting tamarin-prover.
 

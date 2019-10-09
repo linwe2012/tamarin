@@ -5,7 +5,7 @@
             "rule $1:",
             "\t[ $2 ]\n\t--[\n\t\t\n\t]->\n\t[ $3 ]"
         ],
-        "description": "Generate rule"
+        "description": "Skeleton of a rule"
     },
     "rule let in": {
         "prefix": "rule",
@@ -20,7 +20,7 @@
             "\t]->",
             "\t[ $4 ]"
         ],
-        "description": "Generate full rule wit let in"
+        "description": "Skeleton of a rule with `let ... in`"
     },
     "theory": {
         "prefix": "theory",
@@ -79,7 +79,7 @@
         "body":[
             "Out($1)"
         ],
-        "description": "Send message out, can be sniffed by attacker"
+        "description": "Send message out, can be intercepted by attacker"
     },
     "init": {
         "prefix": "init",
@@ -87,15 +87,16 @@
             "rule init_$1:",
             "\t[ $2 ]\n\t--[\n\t\t\n\t]->\n\t[ $3 ]"
         ],
-        "description": "Create an init rule"
+        "description": "Skelton init rule"
     },
     "let in": {
         "prefix": "let",
         "body":[
             "\tlet",
-            "\t\t$1",
+            "\t\t$1", 
             "in"
-        ]
+        ],
+        "description": "Macro definition"
     },
     "all-traces": {
         "prefix": "all",
@@ -119,7 +120,7 @@
             "\t$2",
             "\""
         ],
-        "description": "restriction skeleton"
+        "description": "Skeleton of restriction"
     }
 
 }
