@@ -120,7 +120,7 @@
             "\t$2",
             "\""
         ],
-        "description": "Skeleton of restriction"
+        "description": "Skeleton of restriction, limit the explored state space"
     }
 
 }
