@@ -2,3 +2,5 @@
 *.vsix
 *.aes
 *.spthy
+img
+patching.md

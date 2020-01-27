@@ -38,11 +38,19 @@
         "prefix": "lemma",
         "body": [
             "lemma $1:",
-            "\t\"",
+            "\"",
             "\t$2",
-            "\t\""
+            "\""
         ],
         "description": "Skeleton of a lemma"
+    },
+    "sperate-comment":{
+        "prefix": "cmts",
+        "body": [
+            "// $1",
+            "//------------------------------------"
+        ],
+        "description": "Skeleton of a block comment"
     },
     "block-comment":{
         "prefix": "cmt",
@@ -51,7 +59,34 @@
             "/* $1 */",
             "/************************************/"
         ],
-        "description": "Skeleton of a lemma"
+        "description": "Skeleton of a block comment"
+    },
+    "block-comment-1":{
+        "prefix": "cmt1",
+        "body": [
+            "/***********************/",
+            "/* $1 */",
+            "/***********************/"
+        ],
+        "description": "Skeleton of a shrot block comment"
+    },
+    "block-comment-2":{
+        "prefix": "cmt2",
+        "body": [
+            "/************************************/",
+            "/* $1 */",
+            "/************************************/"
+        ],
+        "description": "Skeleton of a medium length block comment"
+    },
+    "block-comment-3":{
+        "prefix": "cmt3",
+        "body": [
+            "/*****************************************************/",
+            "/* $1 */",
+            "/*****************************************************/"
+        ],
+        "description": "Skeleton of a long block comment"
     },
     "fresh": {
         "prefix": "f",
@@ -89,12 +124,19 @@
         ],
         "description": "Skelton init rule"
     },
+    "senc": {
+        "prefix": "se",
+        "body": [
+            "senc{<$1>}~key"
+        ],
+        "description": "symmetrical encryption"
+    },
     "let in": {
         "prefix": "let",
         "body":[
             "\tlet",
             "\t\t$1", 
-            "in"
+            "\tin"
         ],
         "description": "Macro definition"
     },
